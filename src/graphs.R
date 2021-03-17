@@ -8,7 +8,7 @@ library(cowplot)
 library(rstudioapi)
 
 # loads all wrangled data
-source("dataWrangling.R")
+source("src/dataWrangling.R")
 
 year = 2019
 geo = 'British Columbia'

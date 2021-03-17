@@ -5,10 +5,12 @@ library(dash)
 library(dashHtmlComponents)
 library(dashCoreComponents)
 library(dashBootstrapComponents)
+# library(rstudioapi)
 
 # import dataWrangling and graphs
-
-source("graphs.R")
+# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+source("src/dataWrangling.R")
+source("src/graphs.R")
 
 app = Dash$new(external_stylesheets = dbcThemes$BOOTSTRAP)
 app$layout(
