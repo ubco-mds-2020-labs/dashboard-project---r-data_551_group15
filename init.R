@@ -6,6 +6,10 @@ library(dashHtmlComponents)
 library(dashCoreComponents)
 library(dashBootstrapComponents)
 
+# import dataWrangling and graphs
+
+source("graphs.R")
+
 app = Dash$new(external_stylesheets = dbcThemes$BOOTSTRAP)
 app$layout(
   dbcContainer(
