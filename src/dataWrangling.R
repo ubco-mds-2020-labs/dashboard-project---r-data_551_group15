@@ -5,10 +5,10 @@ library(dplyr)
 library(reshape)
 library(ggpubr)
 library(cowplot)
-library(rstudioapi)
+# library(rstudioapi)
 
 # get the current dirctory
-setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # load the all data sets
 Canada_economic_indicators <- read.csv('data/raw/Canada_economic_indicators.csv')
