@@ -14,31 +14,11 @@ source("src/graphs.R")
 
 app = Dash$new(external_stylesheets = dbcThemes$BOOTSTRAP)
 app$layout(
-  dbcContainer(
-    dbcRow(
-      list(
-        dbcCol(
-          list(
-            htmlLabel('Left'),
-            dccDropdown(
-              options = list(list(label = "New York City", value = "NYC"),
-                             list(label = "San Francisco", value = "SF")),
-              value = 'NYC'
-            )
-          )
-        ),
-        dbcCol(
-          list(
-            htmlLabel('Right'),
-            dccDropdown(
-              options = list(list(label = "New York City", value = "NYC"),
-                             list(label = "San Francisco", value = "SF")),
-              value = 'SF'
-            )
-          )
-        )
-      )
-    ), style = list('max-width' = '85%')  # Change left/right whitespace for the container
+  dbcNavbarSimple(
+    brand = "Canada 1990-2010 GDP Analysis",
+    color = "primary",
+    dark = TRUE,
+    brand_href = "#"
   )
 )
 app$run_server(dubug = T)
