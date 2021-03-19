@@ -25,7 +25,7 @@ tab1_one <- function(year,geo){
     labs(title='GDP Amount', x='GDP (Dollars x 1,000,000)') +
     scale_y_continuous(labels = scales::label_dollar()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
@@ -35,9 +35,9 @@ tab1_one <- function(year,geo){
       axis.text.y=element_blank(),
       axis.text.x=element_blank(),
       axis.ticks.x=element_blank(),
-      strip.text.x = element_text(size = 18)) 
+      strip.text.x = element_text(size = 9)) 
   
-  ggplotly(first_gdp)
+  ggplotly(first_gdp, height = 300)
 }
 
 # GDP Evolution:
@@ -52,14 +52,14 @@ tab1_two <- function(year,geo){
     labs(title='GDP Evolution', y='GDP (Dollars x 1,000,000)', x='Year') +
     scale_y_continuous(labels = scales::label_dollar()) +
     theme_minimal() + theme(
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(),
       panel.grid.minor = element_blank(),
       panel.background = element_blank(),
       axis.ticks.y=element_blank(),
-      axis.text.y=element_text(size=12),
-      axis.text.x=element_text(size=12),
+      axis.text.y=element_text(size=8),
+      axis.text.x=element_text(size=8),
       axis.ticks.x=element_blank(),
       strip.text.y.right = element_blank())
   
@@ -73,7 +73,7 @@ tab1_two <- function(year,geo){
     labs(title='GDP Growth Rate', y='Growth Rate %', x='Year') +
     scale_y_continuous(labels = scales::label_percent()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
@@ -82,7 +82,7 @@ tab1_two <- function(year,geo){
       axis.text.y=element_text(size=12),
       axis.text.x=element_text(size=12),
       axis.ticks.x=element_blank(),
-      strip.text.y.right = element_text(size = 15, angle = 0))
+      strip.text.y.right = element_text(size = 9, angle = 0))
   
   second_gdp <- subplot(ggplotly(three),ggplotly(two))
   second_gdp
@@ -311,7 +311,7 @@ tab2_one <- function(year,geo){
     labs(title='GDP per Capita') +
     scale_y_continuous(labels = scales::label_dollar()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
@@ -322,9 +322,9 @@ tab2_one <- function(year,geo){
       axis.text.y=element_blank(),
       axis.text.x=element_blank(),
       axis.ticks.x=element_blank(),
-      strip.text.x = element_text(size = 18)) 
+      strip.text.x = element_text(size = 9)) 
   
-  ggplotly(first_gdp_capita)
+  ggplotly(first_gdp_capita, height = 300)
 }
 
 # GDP per capita evolution:
@@ -339,7 +339,7 @@ tab2_two <- function(year,geo){
     labs(title='GDP per Capita Evolution', y='GDP per Capita', x='Year') +
     scale_y_continuous(labels = scales::label_dollar()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
@@ -360,7 +360,7 @@ tab2_two <- function(year,geo){
     labs(title='GDP per Capita Growth Rate', y='Growth Rate %', x='Year') +
     scale_y_continuous(labels = scales::label_percent()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
@@ -369,9 +369,9 @@ tab2_two <- function(year,geo){
       axis.text.y=element_text(size=12),
       axis.text.x=element_text(size=12),
       axis.ticks.x=element_blank(),
-      strip.text.y.right = element_text(size = 15, angle = 0)) 
+      strip.text.y.right = element_text(size = 10, angle = 0)) 
   
-  second_gdp_capita <- subplot(ggplotly(four), ggplotly(five))
+  second_gdp_capita <- subplot(ggplotly(four, height =500), ggplotly(five, height = 500))
   second_gdp_capita
 }
 
@@ -433,7 +433,7 @@ tab3_one <- function(year, geo){
     labs(title='CPI Evolution', y='2002 = 100%', x='Year') +
     scale_y_continuous(labels = scales::label_comma()) +
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
@@ -442,7 +442,7 @@ tab3_one <- function(year, geo){
       axis.text.y=element_text(size=12),
       axis.text.x=element_text(size=12),
       axis.ticks.x=element_blank(),
-      strip.text.x = element_text(size = 18))
+      strip.text.x = element_text(size = 9))
   
   seven <- Canada_economic_indicators_pct %>%
     filter(Geography == geo, Year <= year) %>%
@@ -454,7 +454,7 @@ tab3_one <- function(year, geo){
     labs(title='CPI Growth Rate', y='Growth Rate %', x='Year') +
     scale_y_continuous(labels = scales::label_percent()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
@@ -463,9 +463,9 @@ tab3_one <- function(year, geo){
       axis.text.y=element_text(size=12),
       axis.text.x=element_text(size=12),
       axis.ticks.x=element_blank(),
-      strip.text.x = element_text(size = 18)) 
+      strip.text.x = element_text(size = 9)) 
   
-  first_cpi <- subplot(ggplotly(six), ggplotly(seven))
+  first_cpi <- subplot(ggplotly(six,height = 500), ggplotly(seven, height = 500))
   
   first_cpi
 }
@@ -578,17 +578,17 @@ tab4_two <- function(year, geo){
     labs(title='Unemployment Rate Geography Comparison') +
     scale_y_continuous(labels = scales::label_percent()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
       panel.background = element_blank(),
       axis.title.x=element_blank(),
       axis.title.y=element_blank(),
-      axis.text.x=element_text(size = 12),
+      axis.text.x=element_text(size = 10),
       axis.ticks.x=element_blank())
   
-  ggplotly(second_employment)
+  ggplotly(second_employment, height = 500)
 }
 
 # Income:
@@ -651,15 +651,15 @@ tab5_two <- function(year, geo){
     labs(title='Average Weekly Earnings Geography Comparison', y = 'Dollars') +
     scale_y_continuous(labels = scales::label_dollar()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
       panel.background = element_blank(),
       axis.title.x=element_blank(),
-      axis.text.x=element_text(size = 12),
+      axis.text.x=element_text(size = 10),
       axis.ticks.x=element_blank())
-  ggplotly(second_earning)
+  ggplotly(second_earning, height = 500)
 }
 # Test:
 tab2_three(year,geo)
