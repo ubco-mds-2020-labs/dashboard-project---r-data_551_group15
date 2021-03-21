@@ -5,18 +5,15 @@ library(dplyr)
 library(reshape)
 library(ggpubr)
 library(cowplot)
-# library(rstudioapi)
-
-# get the current dirctory
-# setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+library(here)
 
 # load the all data sets
-Canada_economic_indicators <- read.csv('data/raw/Canada_economic_indicators.csv')
-Canada_economic_indicators_pct <- read.csv('data/raw/Canada_economic_indicators_pct.csv')
-earning_pct <- read.csv('data/raw/earnings_pct.csv')
-earning <- read.csv('data/raw/earnings.csv')
-industry_gdp <- read.csv('data/raw/industry_gdp.csv')
-industry_gdp_pct <- read.csv('data/raw/industry_gdp_pct.csv')
+Canada_economic_indicators <- read.csv(here('data','raw','Canada_economic_indicators.csv'))
+Canada_economic_indicators_pct <- read.csv(here('data','raw','Canada_economic_indicators_pct.csv'))
+earning_pct <- read.csv(here('data','raw','earnings_pct.csv'))
+earning <- read.csv(here('data','raw','earnings.csv'))
+industry_gdp <- read.csv(here('data','raw','industry_gdp.csv'))
+industry_gdp_pct <- read.csv(here('data','raw','industry_gdp_pct.csv'))
 
 # data wranglings 
 Canada_economic_indicators <- transform(Canada_economic_indicators, Year = as.character(Canada_economic_indicators$Year))

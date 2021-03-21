@@ -5,7 +5,6 @@ library(dplyr)
 library(reshape)
 library(ggpubr)
 library(cowplot)
-library(rstudioapi)
 
 # loads all wrangled data
 source("src/dataWrangling.R")
@@ -82,7 +81,7 @@ tab1_two <- function(year,geo){
       axis.text.y=element_text(size=12),
       axis.text.x=element_text(size=12),
       axis.ticks.x=element_blank(),
-      strip.text.y.right = element_text(size = 9, angle = 0))
+      strip.text.y.right = element_text(size = 9, angle = 45))
   
   second_gdp <- subplot(ggplotly(three),ggplotly(two))
   second_gdp
@@ -100,13 +99,13 @@ tab1_three <- function(year,geo){
     labs(title='GDP Amount Geography Comparison', y='GDP (Dollars x 1,000,000)') +
     scale_y_continuous(labels = scales::label_dollar()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
       panel.background = element_blank(),
       axis.title.x=element_blank(),
-      axis.text.x=element_text(size = 10, angle=90),
+      axis.text.x=element_text(size = 10, angle=45),
       axis.ticks.x=element_blank())
   
   thirteen <- Canada_economic_indicators_pct %>%
@@ -119,14 +118,14 @@ tab1_three <- function(year,geo){
     labs(title='GDP Growth Rate Geography Comparison') +
     scale_y_continuous(labels = scales::label_percent()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
       panel.background = element_blank(),
       axis.title.x=element_blank(),
       axis.title.y=element_blank(),
-      axis.text.x=element_text(size = 10, angle=90),
+      axis.text.x=element_text(size = 10, angle=45),
       axis.ticks.x=element_blank())
   
   third_gdp <- subplot(ggplotly(twelve), ggplotly(thirteen))
@@ -146,7 +145,7 @@ tab1_four <- function(year,geo){
     labs(title='GDP Amount by Industry', y='GDP (Dollars x 1,000,000)') +
     scale_x_continuous(labels = scales::label_dollar()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
@@ -164,7 +163,7 @@ tab1_four <- function(year,geo){
     labs(title='GDP Growth Rate by Industry', y='GDP (Dollars x 1,000,000)') +
     scale_x_continuous(labels = scales::label_percent()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
@@ -387,13 +386,13 @@ tab2_three <- function(year,geo){
     labs(title='GDP per Capita Geography Comparison', y='Dollars') +
     scale_y_continuous(labels = scales::label_dollar()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
       panel.background = element_blank(),
       axis.title.x=element_blank(),
-      axis.text.x=element_text(size = 10, angle=90),
+      axis.text.x=element_text(size = 10, angle=45),
       axis.ticks.x=element_blank())
   
   fifteen <- Canada_economic_indicators_pct %>%
@@ -406,14 +405,14 @@ tab2_three <- function(year,geo){
     labs(title='GDP per Capita Growth Rate Geography Comparison') +
     scale_y_continuous(labels = scales::label_percent()) + 
     theme_minimal() + theme( 
-      plot.title = element_text(size = 30, face= 'bold', hjust = 0.5),
+      plot.title = element_text(size = 15, face= 'bold', hjust = 0.5),
       legend.position = 'none',
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
       panel.background = element_blank(),
       axis.title.x=element_blank(),
       axis.title.y=element_blank(),
-      axis.text.x=element_text(size = 10, angle=90),
+      axis.text.x=element_text(size = 10, angle=45),
       axis.ticks.x=element_blank())
   
   third_gdp_capita <- ggarrange(fourteen, fifteen, ncol = 2)
@@ -585,7 +584,7 @@ tab4_two <- function(year, geo){
       panel.background = element_blank(),
       axis.title.x=element_blank(),
       axis.title.y=element_blank(),
-      axis.text.x=element_text(size = 10),
+      axis.text.x=element_text(size = 10, angle = 45),
       axis.ticks.x=element_blank())
   
   ggplotly(second_employment, height = 500)
@@ -657,7 +656,7 @@ tab5_two <- function(year, geo){
       panel.grid.minor = element_blank(), 
       panel.background = element_blank(),
       axis.title.x=element_blank(),
-      axis.text.x=element_text(size = 10),
+      axis.text.x=element_text(size = 10, angle = 45),
       axis.ticks.x=element_blank())
   ggplotly(second_earning, height = 500)
 }
